@@ -1,0 +1,13 @@
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\bin\Debug\netcoreapp3.1\BusinessAccessLayer.deps.json
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\bin\Debug\netcoreapp3.1\BusinessAccessLayer.dll
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\bin\Debug\netcoreapp3.1\BusinessAccessLayer.pdb
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\obj\Debug\netcoreapp3.1\BusinessAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\obj\Debug\netcoreapp3.1\BusinessAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\obj\Debug\netcoreapp3.1\BusinessAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\obj\Debug\netcoreapp3.1\BusinessAccessLayer.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\obj\Debug\netcoreapp3.1\BusinessAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\obj\Debug\netcoreapp3.1\BusinessAccessLayer.dll
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\obj\Debug\netcoreapp3.1\BusinessAccessLayer.pdb
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\Lenovo\source\repos\TransactionSystem\BusinessAccessLayer\obj\Debug\netcoreapp3.1\BusinessAccessLayer.csproj.CopyComplete

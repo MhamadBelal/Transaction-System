@@ -1,0 +1,182 @@
+﻿@model IEnumerable<WebAPI.Model.UserViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            @*
+        <li class="page-item">
+            <a class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+            *@
+            @if (ViewBag.Count != 0)
+            {
+            @for (int i = 1; i <= Convert.ToInt32(ViewBag.Count); i++)
+            {
+
+                <li class="page-item"><a class="page-link" asp-action="index" asp-route-PageId="@i">@i</a></li>
+
+            }
+            }
+            @*
+        <li class="page-item">
+            <a class="page-link" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+            *@
+        </ul>
+        </nav>
+            
+            <table class="table table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th hidden>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ServerT)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UTC_T)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Update_UTCT)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastLoginT_UTC)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Gender)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BirthDate)
+                        </th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><input type="checkbox" onchange="SelectItem(this,'@item.Id')" /></td>
+
+                            <td hidden>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FirstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ServerT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UTC_T)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Update_UTCT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastLoginT_UTC)
+                            </td>
+
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Gender)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BirthDate)
+                            </td>
+
+<td>
+
+                            <a href="@Url.Action("Delete","User",new { id=item.Id })" class="btn btn-danger">Delete</a>
+
+                        </td>
+                        @*
+        <td>
+
+            <a class="btn btn-outline-danger" asp-action="Delete" asp-route-Id="@item.Id">Delete</a>
+        </td>
+                        *@
+                    </tr>
+                    }
+
+                </tbody>
+
+
+
+
+
+
+
+            </table>
+
+            <p>
+                <a class="btn btn-danger btn-lg" onclick="sendData()" style="display:none" id="delRange">Delete All Selected Users</a>
+            </p>
+
+
+
+            <script>
+                var list = []
+                function SelectItem(elem, itm) {
+
+
+                    if ($(elem).prop('checked') == true)
+                        list.push(itm);
+                    else
+                        list = list.filter(x => x != itm)
+
+
+                    if (list.length == 0)
+                        $('#delRange').hide()
+                    else
+                        $('#delRange').show()
+                  
+
+                }
+
+                function sendData() {
+
+                    $.post({
+                        url: 'user/delSelected',
+                        data: { ids: list },
+                        success: function (result) {
+                            location.reload(true)
+                        }
+
+                    })
+                }
+            </script>

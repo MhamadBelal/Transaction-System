@@ -1,0 +1,106 @@
+﻿@model IEnumerable<WebAPI.Model.TransactionViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            @*
+        <li class="page-item">
+            <a class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+            *@
+            @if(ViewBag.Count != 0)
+            {
+
+            @for (int i = 1; i <= Convert.ToInt32(ViewBag.Count); i++)
+            {
+
+                <li class="page-item"><a class="page-link" asp-action="index" asp-route-PageId="@i">@i</a></li>
+
+            }
+            }
+            @*
+        <li class="page-item">
+            <a class="page-link" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+            *@
+        </ul>
+        </nav>
+            
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th hidden>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User_ID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Account_ID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ServerT)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UTC_T)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Is_Credit)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Amount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Currency)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td hidden>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User_ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Account_ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ServerT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UTC_T)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Is_Credit)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Amount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Currency)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
